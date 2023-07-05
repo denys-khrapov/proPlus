@@ -1,0 +1,41 @@
+/*! -- Forms styles----------------------------- */
+.form {
+	&__input-wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 16px;
+		margin: 0px 0px 16px 0px;
+	}
+
+	&__input-holder {
+		position: relative;
+		&--name {
+			&::before {
+				background-image: url("../img/user-icon.svg");
+			}
+		}
+		&--phone {
+			&::before {
+				background-image: url("../img/phone-icon.svg");
+			}
+		}
+	}
+
+	&__input-holder::before {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 16px;
+		transform: translateY(-50%);
+		background-position: center;
+		background-repeat: no-repeat;
+		width: 14px;
+		height: 14px;
+		background-size: 14px 14px;
+	}
+
+	&__button-holder {
+		display: flex;
+		justify-content: flex-end;
+	}
+}

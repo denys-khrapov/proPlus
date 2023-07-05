@@ -1,0 +1,38 @@
+/*! -- Badge styles----------------------------- */
+.badge {
+	background-color: #60b7b2;
+	border-radius: 54px;
+	width: fit-content;
+	&__inner {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 4px;
+		padding: 8px 16px;
+		span {
+			color: $white-source;
+			font-size: 14px;
+			font-weight: 700;
+			letter-spacing: 0.28px;
+			text-transform: uppercase;
+		}
+	}
+}
+
+@media (max-width: $md1) {
+	/*! -- Badge styles----------------------------- */
+	.badge {
+		&__inner {
+			padding: 4px 8px 4px 4px;
+			svg {
+				display: flex;
+				width: 14px;
+				height: 14px;
+			}
+			span {
+				font-size: 10px;
+				letter-spacing: 0.2px;
+			}
+		}
+	}
+}

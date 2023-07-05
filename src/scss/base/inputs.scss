@@ -1,0 +1,55 @@
+/*! -- Inputs styles----------------------------- */
+
+input[type="text"],
+input[type="tel"] {
+	width: 100%;
+	box-sizing: border-box;
+	border: 2px solid rgba(0, 0, 0, 0.12);
+	border-radius: 4px;
+	color: $dark-700;
+	font-size: 16px;
+	line-height: 1.4;
+	font-weight: 400;
+	padding: 22px 32px 22px 38px;
+	border-radius: 12px;
+	transition: all 0.3s ease 0s;
+}
+
+input[type="text"]::placeholder,
+input[type="tel"]::placeholder {
+	font-family: "Ubuntu", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.4;
+	color: $dark-700;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+	outline: none;
+	border-color: #5d9eff;
+	background-color: $white-source;
+}
+
+input[type="text"].disabled,
+input[type="tel"].disabled {
+	pointer-events: none;
+	background-color: transparent;
+	border: none;
+	&::placeholder {
+		color: $dark-200;
+	}
+}
+
+input.novalid {
+	border: 2px solid red;
+}
+
+@media (max-width: $md1) {
+	/*! -- Inputs styles----------------------------- */
+	input[type="text"],
+	input[type="tel"] {
+		padding: 14px 16px 14px 38px;
+	}
+}

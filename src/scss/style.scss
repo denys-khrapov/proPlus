@@ -40,7 +40,7 @@ body {
 	}
 	font-size: $fontSize;
 	font-weight: 400;
-	line-height: 140%;
+	line-height: 1.4;
 	color: $dark-700;
 }
 
@@ -98,10 +98,15 @@ body {
 	}
 }
 
+@import "base/badge";
+@import "base/buttons";
+@import "base/inputs";
+@import "base/forms";
 @import "base/accordion";
 @import "base/scrollbar";
 @import "blocks/header";
 @import "blocks/logo";
+@import "blocks/cta-additionally";
 @import "blocks/reviews";
 @import "blocks/faq";
 @import "blocks/footer";
