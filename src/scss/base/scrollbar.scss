@@ -1,0 +1,25 @@
+/*! -- Scrollbar styles----------------------------- */
+
+#scrollbar-reviews,
+#scrollbar-stages {
+	margin: 32px 0px 0px 0px;
+	position: static;
+	width: 100%;
+	// margin-left: auto;
+	// margin-right: auto;
+	cursor: pointer;
+	background-color: $white-source;
+	border-radius: 0;
+	.swiper-scrollbar-drag {
+		background-color: $orange-source;
+		border-radius: 0;
+	}
+}
+
+@media (max-width: $md1) {
+	/*! -- Scrollbar styles----------------------------- */
+	#scrollbar-reviews,
+	#scrollbar-stages {
+		margin: 32px 0px 0px 0px;
+	}
+}

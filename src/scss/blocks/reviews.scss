@@ -1,0 +1,123 @@
+/*! -- Reviews styles----------------------------- */
+.reviews {
+	padding: 128px 0px 256px;
+	position: relative;
+	z-index: 4;
+	background-color: $dark-700;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		row-gap: 64px;
+	}
+	&__title {
+		color: $dark-50;
+	}
+	&__text {
+		margin: 0px 0px 32px 0px;
+	}
+
+	&-slider {
+		cursor: grab;
+	}
+	&-slide {
+		width: 356px;
+		min-height: auto;
+		&__inner {
+			padding: 32px;
+			background-color: $white-source;
+			border-radius: 24px;
+			min-height: 308px;
+			height: 100%;
+		}
+		&__header {
+			h3 {
+				font-size: 24px;
+				font-weight: 400;
+				line-height: 1.4;
+				margin: 0px 0px 24px 0px;
+			}
+		}
+		.content-inner {
+			max-height: 110px;
+			overflow: hidden;
+			transition: max-height 0.25s ease;
+		}
+		.content-full {
+			p {
+				font-size: 16px;
+				line-height: 1.4;
+			}
+		}
+	}
+}
+.read-more {
+	margin: 24px 0px 0px 0px;
+	padding: 16px;
+	background-color: $orange-source;
+	border-radius: 12px;
+	display: flex;
+	width: fit-content;
+	cursor: pointer;
+	svg {
+		pointer-events: none;
+	}
+	&.show {
+		svg {
+			transform: rotate(-90deg);
+		}
+	}
+}
+
+@media (max-width: $md1) {
+	/*! -- Reviews styles----------------------------- */
+	.reviews {
+		padding: 160px 0px 160px;
+		&__container {
+			row-gap: 40px;
+		}
+		&__text {
+			font-size: 16px;
+			line-height: 22px;
+			margin: 0px 0px 24px 0px;
+		}
+		&-slider {
+			cursor: default;
+		}
+		&-slide {
+			width: 256px;
+			&__inner {
+				padding: 16px;
+				min-height: 251px;
+			}
+			&__header {
+				h3 {
+					font-size: 18px;
+					font-weight: 700;
+					margin: 0px 0px 16px 0px;
+				}
+			}
+			.content-inner {
+				max-height: 110px;
+			}
+			.content-full {
+				font-size: 13px;
+				line-height: 18px;
+			}
+		}
+	}
+	.read-more {
+		margin: 16px 0px 0px 0px;
+	}
+}
+
+@media (max-width: $md4) {
+	/*! -- Reviews styles----------------------------- */
+	.reviews {
+		&-slide {
+			min-height: auto;
+			&__inner {
+				position: static;
+			}
+		}
+	}
+}
