@@ -1,0 +1,63 @@
+/*! -- Logo styles----------------------------- */
+
+.logo {
+	background-color: $dark-50;
+	padding: 265px 0px;
+	&__rows {
+		display: flex;
+		flex-direction: row;
+		border-bottom: 1px solid $dark-100;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	&__items {
+		display: none;
+	}
+	&__item {
+		width: 25%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-right: 1px solid $dark-100;
+		&:last-of-type {
+			border-right: none;
+		}
+	}
+	&__svg-holder {
+		min-height: 140px;
+		display: flex;
+		align-items: center;
+	}
+}
+
+@media (max-width: $md1) {
+	/*! -- Logo styles----------------------------- */
+	.logo {
+		padding: 194px 0px;
+		&__container {
+			display: flex;
+			flex-direction: column;
+			row-gap: 32px;
+		}
+		&__rows {
+			display: none;
+		}
+		&__item {
+			width: auto;
+			border-right: none;
+			min-width: 256px;
+			max-width: 256px;
+		}
+		&__items {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			row-gap: 32px;
+		}
+		&__svg-holder {
+			height: 35px;
+			min-height: unset;
+		}
+	}
+}
