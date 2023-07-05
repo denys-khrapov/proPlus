@@ -128,3 +128,333 @@ body.lock {
   position: relative;
   z-index: 1;
 }
+
+/*! -- Accordion styles----------------------------- */
+
+.accordion {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 40px;
+  width: 100%;
+  max-width: 736px;
+  position: relative;
+}
+
+.accordion__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 15.5px;
+}
+
+.accordion__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-column-gap: 16px;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  cursor: pointer;
+  color: rgb(57, 57, 57);
+  width: 100%;
+  border: none;
+  font-size: 24px;
+  line-height: 140%;
+  font-weight: 400;
+  text-align: left;
+  outline: none;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.accordion__btn svg {
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.accordion__btn svg path {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.accordion__btn.active {
+  color: rgb(229, 88, 40);
+}
+
+.accordion__btn.active svg {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.accordion__btn.active svg path {
+  fill: rgb(229, 88, 40);
+}
+
+.accordion__btn.active::after {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.accordion__text-holder {
+  max-height: 1px;
+  border-bottom: 1px solid rgb(186, 186, 186);
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+.accordion__list {
+  margin: -16px 0px 22px 0px;
+}
+
+.accordion__list li {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.accordion__text {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 300;
+  margin: 0px 0px 16px;
+}
+
+.accordion__image-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-column-gap: 16px;
+  -moz-column-gap: 16px;
+  column-gap: 16px;
+  row-gap: 16px;
+  margin: 0px 0px 16px 0px;
+}
+
+.accordion__image-holder a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  cursor: pointer;
+}
+
+.accordion__image-holder picture {
+  width: 100%;
+}
+
+.accordion__image-holder picture img {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.accordion__image-holder picture img:hover {
+  -webkit-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+
+/*! -- Faq styles----------------------------- */
+
+.faq {
+  padding: 0px 0px 191px;
+}
+
+.faq__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 112px;
+}
+
+.faq__header {
+  margin: -128px 0px 0px 0px;
+}
+
+.faq__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 109px;
+  -moz-column-gap: 109px;
+  column-gap: 109px;
+}
+
+.faq .title {
+  white-space: nowrap;
+}
+
+@media (max-width: 1199px) {
+  .container {
+    max-width: 100%;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+
+  /*! -- Accordion styles----------------------------- */
+
+  .accordion {
+    row-gap: 16px;
+    max-width: 100%;
+  }
+
+  .accordion__btn {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    -webkit-column-gap: 8px;
+    -moz-column-gap: 8px;
+    column-gap: 8px;
+  }
+
+  .accordion__btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .accordion__wrapper {
+    row-gap: 15px;
+  }
+
+  .accordion__image-box {
+    -webkit-column-gap: 0px;
+    -moz-column-gap: 0px;
+    column-gap: 0px;
+    margin: 0 -8px 8px;
+  }
+
+  .accordion__image-holder {
+    width: 33.333%;
+    padding: 0 8px;
+  }
+
+  .accordion__image-holder img {
+    max-width: 100%;
+    width: 100%;
+    max-height: 80px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+
+  .accordion__text {
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .accordion__text:last-child {
+    margin: 0px 0px 16px 0px;
+  }
+
+  .accordion__list {
+    margin: -8px 0px 10px 0px;
+  }
+
+  .accordion__list li {
+    font-size: 13px;
+    line-height: 18px;
+  }
+
+  /*! -- Faq styles----------------------------- */
+
+  .faq {
+    padding: 0px 0px 128px;
+  }
+
+  .faq__container {
+    row-gap: 88px;
+  }
+
+  .faq__header {
+    margin: -95.75px 0px 0px 0px;
+  }
+
+  .faq__content {
+    -webkit-column-gap: 32px;
+    -moz-column-gap: 32px;
+    column-gap: 32px;
+    row-gap: 48px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .faq__left-column {
+    min-width: 256px;
+    max-width: 300px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .faq__right-column {
+    width: 100%;
+    max-width: 803px;
+    min-width: 256px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .faq__image-holder {
+    height: 200px;
+  }
+
+  .faq__image-holder img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+}
+
+@media (any-hover: hover) {
+  .accordion__btn:hover {
+    color: rgb(229, 88, 40);
+  }
+
+  .accordion__btn:hover svg path {
+    fill: rgb(229, 88, 40);
+  }
+}

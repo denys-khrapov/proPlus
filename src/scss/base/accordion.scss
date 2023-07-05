@@ -1,0 +1,163 @@
+/*! -- Accordion styles----------------------------- */
+
+.accordion {
+	display: flex;
+	flex-direction: column;
+	row-gap: 40px;
+	width: 100%;
+	max-width: 736px;
+	position: relative;
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: 15.5px;
+	}
+	&__btn {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 16px;
+		cursor: pointer;
+		color: $dark-700;
+		width: 100%;
+		border: none;
+		font-size: 24px;
+		line-height: 140%;
+		font-weight: 400;
+		text-align: left;
+		outline: none;
+		transition: all 0.2s;
+		position: relative;
+		svg {
+			flex-shrink: 0;
+			transition: all 0.2s;
+			path {
+				transition: all 0.2s;
+			}
+		}
+		&.active {
+			color: $orange-source;
+			svg {
+				transform: rotate(90deg);
+				path {
+					fill: $orange-source;
+				}
+			}
+			&::after {
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				color: $orange-source;
+				svg {
+					path {
+						fill: $orange-source;
+					}
+				}
+			}
+		}
+	}
+
+	&__text-holder {
+		max-height: 1px;
+		border-bottom: 1px solid $dark-200;
+		overflow: hidden;
+		transition: max-height 0.2s ease-out;
+	}
+	&__list {
+		margin: -16px 0px 22px 0px;
+		li {
+			font-size: 16px;
+			line-height: 22px;
+			font-weight: 300;
+			// color: $black-source;
+		}
+	}
+
+	&__text {
+		font-size: 16px;
+		line-height: 22px;
+		font-weight: 300;
+		// color: $black-source;
+		margin: 0px 0px 16px;
+	}
+	&__image-box {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		column-gap: 16px;
+		row-gap: 16px;
+		margin: 0px 0px 16px 0px;
+	}
+	&__image-holder {
+		a {
+			display: flex;
+			height: 100%;
+			cursor: pointer;
+		}
+		picture {
+			width: 100%;
+			img {
+				filter: grayscale(100%);
+				transition: all 0.3s ease 0s;
+				&:hover {
+					filter: grayscale(0%);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: $md1) {
+	/*! -- Accordion styles----------------------------- */
+	.accordion {
+		row-gap: 16px;
+		max-width: 100%;
+		&__btn {
+			font-size: 16px;
+			line-height: 22px;
+			font-weight: 400;
+			column-gap: 8px;
+			svg {
+				width: 16px;
+				height: 16px;
+			}
+		}
+		&__wrapper {
+			row-gap: 15px;
+		}
+		&__image-box {
+			column-gap: 0px;
+			margin: 0 -8px 8px;
+		}
+		&__image-holder {
+			width: 33.333%;
+			padding: 0 8px;
+			img {
+				max-width: 100%;
+				width: 100%;
+				max-height: 80px;
+				object-fit: cover;
+				// border: 2px solid $black-300;
+				border-radius: 4px;
+			}
+		}
+		&__text {
+			font-size: 16px;
+			line-height: 1.4;
+			margin: 0px 0px 30px 0px;
+			&:last-child {
+				margin: 0px 0px 16px 0px;
+			}
+		}
+		&__list {
+			margin: -8px 0px 10px 0px;
+			li {
+				font-size: 13px;
+				line-height: 18px;
+			}
+		}
+	}
+}
