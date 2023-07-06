@@ -3,6 +3,7 @@ jQuery(document).ready(function ($) {
 	initAccordion();
 	initReadMore();
 	initSwiper();
+	initClickCard();
 });
 
 function testWebPFunction() {
@@ -184,6 +185,24 @@ function initAccordion() {
 	}
 }
 
+function initClickCard() {
+	var cards = $('.advantages-card');
+
+	cards.each(function () {
+		var card = $(this);
+		card.click(function () {
+			if (card.hasClass('active')) {
+				card.removeClass('active');
+			} else {
+				card.addClass('active');
+			}
+		});
+	});
+}
+
+
+
+AOS.init();
 
 
 

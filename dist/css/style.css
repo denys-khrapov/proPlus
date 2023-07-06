@@ -574,6 +574,141 @@ input.novalid {
   align-items: center;
 }
 
+/*! -- Advantages styles----------------------------- */
+
+.advantages__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.advantages-card {
+  position: relative;
+  width: 33.333%;
+  min-height: 600px;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+
+.advantages-card__inner {
+  position: relative;
+  padding: 32px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+}
+
+.advantages-card__title {
+  -webkit-transform: translateY(100%);
+  -ms-transform: translateY(100%);
+  transform: translateY(100%);
+  -webkit-transition: -webkit-transform 0.5s ease 0s;
+  transition: -webkit-transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s, -webkit-transform 0.5s ease 0s;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 1.2;
+  margin: 0px 0px 32px 0px;
+}
+
+.advantages-card:nth-child(odd) {
+  background: rgb(214, 214, 214);
+}
+
+.advantages-card__svg-holder {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 3px solid rgb(57, 57, 57);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-animation: fastAnimation 0.2s ease 0s;
+  animation: fastAnimation 0.2s ease 0s;
+}
+
+.advantages-card__text {
+  color: rgb(251, 251, 251);
+  display: none;
+}
+
+.advantages-card__svg-click {
+  display: none;
+}
+
+@-webkit-keyframes fastAnimation {
+  0% {
+    -webkit-transform: translateY(-1000%);
+    transform: translateY(-1000%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fastAnimation {
+  0% {
+    -webkit-transform: translateY(-1000%);
+    transform: translateY(-1000%);
+  }
+
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slowAnimation {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform: translateY(-1000%);
+    transform: translateY(-1000%);
+  }
+}
+
+@keyframes slowAnimation {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  100% {
+    -webkit-transform: translateY(-1000%);
+    transform: translateY(-1000%);
+  }
+}
+
 /*! -- CTA-additionally styles----------------------------- */
 
 .cta-additionally__container {
@@ -917,6 +1052,77 @@ input.novalid {
     min-height: unset;
   }
 
+  /*! -- Advantages styles----------------------------- */
+
+  .advantages-card {
+    min-width: 320px;
+    min-height: 200px;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+  }
+
+  .advantages-card__inner {
+    padding: 0px 32px;
+  }
+
+  .advantages-card__svg-holder {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid rgb(57, 57, 57);
+  }
+
+  .advantages-card__svg-holder svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .advantages-card__title {
+    font-size: 14px;
+    letter-spacing: 0.28px;
+  }
+
+  .advantages-card__text {
+    font-size: 16px;
+  }
+
+  .advantages-card__svg-click {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .advantages-card__svg-click svg path {
+    -webkit-transition: all 0.5s ease 0s;
+    transition: all 0.5s ease 0s;
+  }
+
+  .advantages-card.active {
+    background-color: rgb(57, 57, 57);
+  }
+
+  .advantages-card.active .advantages-card__text {
+    display: block;
+  }
+
+  .advantages-card.active .advantages-card__title {
+    color: rgb(251, 251, 251);
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  .advantages-card.active .advantages-card__svg-holder {
+    display: none;
+  }
+
+  .advantages-card.active .advantages-card__svg-click svg path {
+    fill: rgb(251, 251, 251);
+  }
+
   /*! -- CTA-additionally styles----------------------------- */
 
   .cta-additionally__container {
@@ -1095,5 +1301,28 @@ input.novalid {
 
   .accordion__btn:hover svg path {
     fill: rgb(229, 88, 40);
+  }
+
+  .advantages-card:hover {
+    background-color: rgb(57, 57, 57);
+  }
+
+  .advantages-card:hover .advantages-card__svg-holder {
+    -webkit-transform: translateY(-1000%);
+    -ms-transform: translateY(-1000%);
+    transform: translateY(-1000%);
+    -webkit-animation: slowAnimation 0.5s ease 0s;
+    animation: slowAnimation 0.5s ease 0s;
+  }
+
+  .advantages-card:hover .advantages-card__title {
+    color: rgb(251, 251, 251);
+    -webkit-transform: translateY(0%);
+    -ms-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+
+  .advantages-card:hover .advantages-card__text {
+    display: block;
   }
 }
