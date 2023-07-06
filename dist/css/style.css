@@ -164,6 +164,36 @@ body.lock {
   text-transform: uppercase;
 }
 
+.swiper-pagination {
+  height: 8px;
+  position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 32px 0px 0px 0px;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: green;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 8px;
+  height: 8px;
+  background-color: rgb(229, 88, 40);
+}
+
 /*! -- Buttons styles----------------------------- */
 
 .btn-full {
@@ -578,14 +608,22 @@ input.novalid {
   border-radius: 0;
 }
 
-/*! -- Logo styles----------------------------- */
+/*! -- Benefits styles----------------------------- */
 
-.logo {
-  background-color: rgb(251, 251, 251);
-  padding: 265px 0px;
+.no-webp .benefits {
+  background-image: url("../img/benefits-bg.jpg");
 }
 
-.logo__rows {
+.benefits {
+  padding: 137px 0px 117px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.benefits__container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -593,43 +631,177 @@ input.novalid {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  border-bottom: 1px solid rgb(214, 214, 214);
+  -webkit-column-gap: 24px;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
 }
 
-.logo__rows:last-child {
-  border-bottom: none;
+.benefits__left-column {
+  width: 831px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
 }
 
-.logo__items {
-  display: none;
+.benefits__right-column {
+  width: calc(100% - 831px);
 }
 
-.logo__item {
-  width: 25%;
+.benefits__image-holder {
+  position: relative;
+}
+
+.no-webp .benefits__image-holder::before {
+  background-image: url("../img/benefits-img-vector.png");
+}
+
+.benefits__image-holder::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 403px;
+  height: 59px;
+  -webkit-filter: blur(9px);
+  filter: blur(9px);
+  z-index: 1;
+}
+
+.benefits__image-holder img {
+  position: relative;
+  z-index: 2;
+}
+
+.benefits__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  border-right: 1px solid rgb(214, 214, 214);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  row-gap: 32px;
+  margin: 0px 0px 104.5px 0px;
 }
 
-.logo__item:last-of-type {
-  border-right: none;
+.benefits__text {
+  font-size: 24px;
 }
 
-.logo__svg-holder {
-  min-height: 140px;
+.benefits__slider {
+  overflow: hidden;
+}
+
+.benefits-slide {
+  width: 261px;
+  min-height: auto;
+}
+
+.benefits-slide__inner {
+  padding: 14px 16px;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 24px;
+  background: #fff;
+  min-height: 264px;
+  height: 100%;
+}
+
+.benefits-slide__header {
+  margin: 0px 0px 24px 0px;
+  padding: 8px 16px;
+  border-radius: 54px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 8px;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.benefits-slide__header.blue {
+  background-color: #6ea9cb;
+}
+
+.benefits-slide__header.brown {
+  background-color: #bc9683;
+}
+
+.benefits-slide__header.orange {
+  background-color: #f09654;
+}
+
+.benefits-slide__header.green {
+  background-color: #60b7b2;
+}
+
+.benefits-slide__header.purple {
+  background-color: #a38dbf;
+}
+
+.benefits-slide__header.pink {
+  background-color: #bf6cb2;
+}
+
+.benefits-slide__header h3 {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+}
+
+.benefits-slide .content-inner {
+  max-height: 122px;
+  overflow: hidden;
+  -webkit-transition: max-height 0.25s ease;
+  transition: max-height 0.25s ease;
+}
+
+.benefits-slide .content-full p {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.benefits-slide .read-more {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-column-gap: 8px;
+  -moz-column-gap: 8px;
+  column-gap: 8px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: transparent;
+  color: #5d9eff;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.26px;
+  padding: 3.5px 0px;
+  margin-left: auto;
+}
+
+.benefits-slide .read-more.show svg {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.benefits-bullets .swiper-pagination-bullet {
+  background-color: #000;
 }
 
 /*! -- CTA styles----------------------------- */
@@ -877,6 +1049,60 @@ input.novalid {
   margin: 0px 0px 40px 0px;
 }
 
+/*! -- Logo styles----------------------------- */
+
+.logo {
+  background-color: rgb(251, 251, 251);
+  padding: 265px 0px;
+}
+
+.logo__rows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  border-bottom: 1px solid rgb(214, 214, 214);
+}
+
+.logo__rows:last-child {
+  border-bottom: none;
+}
+
+.logo__items {
+  display: none;
+}
+
+.logo__item {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-right: 1px solid rgb(214, 214, 214);
+}
+
+.logo__item:last-of-type {
+  border-right: none;
+}
+
+.logo__svg-holder {
+  min-height: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
 /*! -- Reviews styles----------------------------- */
 
 .reviews {
@@ -939,7 +1165,7 @@ input.novalid {
 
 .reviews-slide .content-full p {
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 22px;
 }
 
 .read-more {
@@ -1008,6 +1234,14 @@ input.novalid {
 .faq__image-holder {
   position: relative;
   z-index: 5;
+}
+
+.webp .benefits {
+  background-image: url(../img/benefits-bg.webp);
+}
+
+.webp .benefits__image-holder::before {
+  background-image: url(../img/benefits-img-vector.webp);
 }
 
 @media (max-width: 1199px) {
@@ -1127,49 +1361,64 @@ input.novalid {
     margin: 32px 0px 0px 0px;
   }
 
-  /*! -- Logo styles----------------------------- */
+  /*! -- Benefits styles----------------------------- */
 
-  .logo {
-    padding: 194px 0px;
+  .no-webp .benefits {
+    background-image: url("../img/benefits-bg-1199.jpg");
   }
 
-  .logo__container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    row-gap: 32px;
+  .benefits {
+    padding: 128px 0px;
   }
 
-  .logo__rows {
-    display: none;
+  .benefits__container {
+    position: relative;
   }
 
-  .logo__item {
-    width: auto;
-    border-right: none;
+  .benefits__slider {
+    overflow: visible;
+    position: relative;
+    z-index: 5;
+  }
+
+  .benefits__header {
+    max-width: 567px;
+    margin: 0px 0px 64px 0px;
+  }
+
+  .benefits__text {
+    font-size: 18px;
+  }
+
+  .benefits__image-holder {
+    width: 162px;
+    height: 578px;
+  }
+
+  .benefits__image-holder img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  .benefits__left-column {
+    width: 100%;
+    max-width: 816px;
+  }
+
+  .benefits__right-column {
+    width: 162px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 124px;
+  }
+
+  .benefits-slide {
     min-width: 256px;
-    max-width: 256px;
-  }
-
-  .logo__items {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-    row-gap: 32px;
-  }
-
-  .logo__svg-holder {
-    height: 35px;
-    min-height: unset;
   }
 
   /*! -- CTA styles----------------------------- */
@@ -1376,6 +1625,51 @@ input.novalid {
     margin: 0px 0px 32px 0px;
   }
 
+  /*! -- Logo styles----------------------------- */
+
+  .logo {
+    padding: 194px 0px;
+  }
+
+  .logo__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 32px;
+  }
+
+  .logo__rows {
+    display: none;
+  }
+
+  .logo__item {
+    width: auto;
+    border-right: none;
+    min-width: 256px;
+    max-width: 256px;
+  }
+
+  .logo__items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    row-gap: 32px;
+  }
+
+  .logo__svg-holder {
+    height: 35px;
+    min-height: unset;
+  }
+
   /*! -- Reviews styles----------------------------- */
 
   .reviews {
@@ -1474,9 +1768,36 @@ input.novalid {
     -o-object-fit: cover;
     object-fit: cover;
   }
+
+  .webp .benefits {
+    background-image: url(../img/benefits-bg-1199.webp);
+  }
+}
+
+@media (max-width: 860px) {
+  /*! -- Benefits styles----------------------------- */
+
+  .benefits__left-column {
+    position: relative;
+    z-index: 5;
+  }
+
+  .benefits__right-column {
+    width: 162px;
+    position: absolute;
+    right: 0;
+  }
 }
 
 @media (max-width: 575px) {
+  /*! -- Benefits styles----------------------------- */
+
+  .benefits__right-column {
+    width: 162px;
+    position: absolute;
+    right: -75px;
+  }
+
   /*! -- Reviews styles----------------------------- */
 
   .reviews-slide {

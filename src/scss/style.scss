@@ -99,16 +99,18 @@ body {
 }
 
 @import "base/badge";
+@import "base/swiper";
 @import "base/buttons";
 @import "base/inputs";
 @import "base/forms";
 @import "base/accordion";
 @import "base/scrollbar";
 @import "blocks/header";
-@import "blocks/logo";
+@import "blocks/benefits";
 @import "blocks/cta";
 @import "blocks/advantages";
 @import "blocks/cta-additionally";
+@import "blocks/logo";
 @import "blocks/reviews";
 @import "blocks/faq";
 @import "blocks/footer";

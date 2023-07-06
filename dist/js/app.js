@@ -23,6 +23,25 @@ function testWebPFunction() {
 }
 
 function initSwiper() {
+	let swiperBenefits = new Swiper('.benefits-slider', {
+		pagination: {
+			el: '.swiper-pagination',
+			clickable: true,
+		},
+		breakpoints: {
+			320: {
+				slidesPerView: 'auto',
+				spaceBetween: 24,
+				loop: false,
+			},
+			1200: {
+				slidesPerView: 3,
+				spaceBetween: 24,
+				loop: false,
+			}
+		}
+	});
+
 	let swiperReviews = new Swiper('.reviews-slider', {
 		slidesPerView: 'auto',
 		scrollbar: {
@@ -39,6 +58,11 @@ function initSwiper() {
 				loop: false,
 			}
 		}
+	});
+
+	swiperBenefits.on('slideChange', function () {
+		// Закрыть открытые отзывы
+		closeOpenReviews();
 	});
 
 	swiperReviews.on('slideChange', function () {
@@ -109,10 +133,11 @@ function initReadMore() {
 	if (more) {
 		more.each(function () {
 			var currentMoreBtn = $(this);
-			var contentHolder = currentMoreBtn.closest(".reviews-slide__inner");
+			var contentHolder = currentMoreBtn.closest(".benefits-slide__inner, .reviews-slide__inner");
 			var content = contentHolder.find(".content-inner");
 			var contentFull = contentHolder.find(".content-full");
-			var minHeight = 110; // Минимальная высота, при которой read-more должен быть скрыт
+			var minHeight = 111; // Минимальная высота, при которой read-more должен быть скрыт
+			var minHeightBenefits = 126;
 
 			currentMoreBtn.click(function (e) {
 				var open = currentMoreBtn.hasClass('show');
@@ -120,19 +145,15 @@ function initReadMore() {
 				if (open) {
 					content.removeAttr("style");
 					currentMoreBtn.removeClass('show');
-					contentFull.addClass('hide-text');
-
 				} else {
 					content.css("max-height", contentFull.height());
 					currentMoreBtn.addClass('show');
-					contentFull.removeClass('hide-text');
-
 				}
 			});
 
 			// Проверка высоты .content-full после загрузки контента
 			contentFull.on("load", function () {
-				if (contentFull.height() < minHeight) {
+				if (contentFull.height() < minHeight || contentFull.height() < minHeightBenefits) {
 					currentMoreBtn.hide();
 				} else {
 					currentMoreBtn.show();
@@ -140,7 +161,7 @@ function initReadMore() {
 			});
 
 			// Проверка высоты .content-full при загрузке страницы
-			if (contentFull.height() < minHeight) {
+			if (contentFull.height() < minHeight || contentFull.height() < minHeightBenefits) {
 				currentMoreBtn.hide();
 			} else {
 				currentMoreBtn.show();
@@ -153,7 +174,7 @@ function closeOpenReviews() {
 	const openReviews = $(".read-more.show");
 	openReviews.each(function () {
 		var currentMoreBtn = $(this);
-		var contentHolder = currentMoreBtn.closest(".reviews-slide__inner");
+		var contentHolder = currentMoreBtn.closest(".benefits-slide__inner, .reviews-slide__inner");
 		var content = contentHolder.find(".content-inner");
 
 		content.removeAttr("style");

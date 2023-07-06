@@ -1,0 +1,20 @@
+.swiper-pagination {
+	height: 8px;
+	position: static;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 32px 0px 0px 0px;
+	.swiper-pagination-bullet {
+		width: 4px;
+		height: 4px;
+		border-radius: 50%;
+		background-color: green;
+		transition: all 0.3s ease 0s;
+		&.swiper-pagination-bullet-active {
+			width: 8px;
+			height: 8px;
+			background-color: $orange-source;
+		}
+	}
+}
