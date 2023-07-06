@@ -45,9 +45,60 @@
 	}
 }
 
+.btn-outline {
+	width: fit-content;
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	column-gap: 8px;
+	color: $dark-700;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.4;
+	letter-spacing: 0.26px;
+	text-transform: uppercase;
+	padding: 14px 15px;
+	border-radius: 12px;
+	border: 2px solid $dark-700;
+	background-color: transparent;
+	transition: all 0.3s ease 0s;
+	vertical-align: middle;
+	cursor: pointer;
+	&:hover {
+		border-color: $orange-500;
+	}
+	&:active {
+		border-color: $orange-600;
+	}
+	&:focus {
+		outline: none;
+		border-color: $orange-500;
+	}
+	&.blocked {
+		color: $dark-400;
+		pointer-events: none;
+		border-color: $dark-400;
+		svg {
+			path {
+				fill: $dark-400;
+			}
+		}
+	}
+	&.blocked:focus {
+		outline: none;
+	}
+}
+
 @media (max-width: $md1) {
 	/*! -- Buttons styles----------------------------- */
 	.btn-full {
+		font-weight: 400;
+		svg {
+			width: 18px;
+			height: 18px;
+		}
+	}
+	.btn-outline {
 		font-weight: 400;
 		svg {
 			width: 18px;
