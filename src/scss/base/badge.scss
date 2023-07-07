@@ -3,6 +3,24 @@
 	background-color: #60b7b2;
 	border-radius: 54px;
 	width: fit-content;
+	&.blue {
+		background-color: #6ea9cb;
+	}
+	&.brown {
+		background-color: #bc9683;
+	}
+	&.orange {
+		background-color: #f09654;
+	}
+	&.green {
+		background-color: #60b7b2;
+	}
+	&.purple {
+		background-color: #a38dbf;
+	}
+	&.pink {
+		background-color: #bf6cb2;
+	}
 	&__inner {
 		display: flex;
 		flex-direction: row;
