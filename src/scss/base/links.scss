@@ -1,0 +1,53 @@
+/*! -- Links styles----------------------------- */
+.link {
+	width: fit-content;
+	vertical-align: middle;
+	display: flex;
+	flex-direction: row;
+	column-gap: 8px;
+	align-items: center;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.4;
+	letter-spacing: 0.26px;
+	text-transform: uppercase;
+	color: #5d9eff;
+	transition: all 0.3s ease 0s;
+	cursor: pointer;
+	svg {
+		path {
+			transition: all 0.3s ease 0s;
+		}
+	}
+	&:hover {
+		color: #4563ff;
+		svg {
+			path {
+				fill: #4563ff;
+			}
+		}
+	}
+	&:active {
+		color: #e55828;
+		svg {
+			path {
+				fill: #e55828;
+			}
+		}
+	}
+	&:focus {
+		outline: none;
+	}
+	&.blocked {
+		pointer-events: none;
+		color: $dark-400;
+		svg {
+			path {
+				fill: $dark-400;
+			}
+		}
+	}
+	&.blocked:focus {
+		outline: none;
+	}
+}
