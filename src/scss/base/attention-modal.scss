@@ -1,0 +1,83 @@
+/*! -- Attention-modal styles----------------------------- */
+.attention-modal {
+	position: fixed;
+	right: 400px;
+	bottom: 100px;
+	border-radius: 12px;
+	background: linear-gradient(135deg, #282828 0%, #404040 100%);
+	color: $dark-50;
+	max-width: 546px;
+	width: 100%;
+	z-index: 50;
+	&__inner {
+		padding: 24px 58px 24px 64px;
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 16px;
+		position: relative;
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 26px;
+			transform: translateY(-50%);
+			background-image: url("../img/attention-icon.svg");
+			background-position: center center;
+			background-size: cover;
+			background-repeat: no-repeat;
+			width: 20px;
+			height: 20px;
+			z-index: 1;
+		}
+	}
+	&__close {
+		position: absolute;
+		top: 24px;
+		right: 24px;
+		width: 18px;
+		height: 18px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+	}
+	p {
+		font-size: 16px;
+	}
+	h3 {
+		font-size: 16px;
+		font-weight: 700;
+		text-transform: uppercase;
+		margin: 0px 0px 16px 0px;
+		letter-spacing: 0.32px;
+		span {
+			color: $orange-source;
+			text-decoration: underline;
+		}
+	}
+	.btn-full {
+		font-size: 13px;
+		font-weight: 400;
+		padding: 16px;
+	}
+}
+
+/*! -- Attention-modal styles----------------------------- */
+.attention-modal {
+	max-width: 256px;
+	padding: 16px;
+	right: 0;
+	bottom: 0;
+	&__inner {
+		padding: 40px 0px 0px;
+		flex-direction: column;
+		column-gap: 0px;
+		row-gap: 16px;
+		align-items: flex-start;
+		&::before {
+			top: 8px;
+			left: 0;
+		}
+	}
+}

@@ -4,6 +4,7 @@ jQuery(document).ready(function ($) {
 	initReadMore();
 	initSwiper();
 	initClickCard();
+	initAttentionModal();
 });
 
 function testWebPFunction() {
@@ -221,6 +222,22 @@ function initClickCard() {
 	});
 }
 
+function initAttentionModal() {
+	var cookieBlock = $('.attention-modal');
+	var cookieBtnAccept = $('.attention-modal__close');
+
+	var isCookieAccepted = sessionStorage.getItem('cookieAccepted');
+	if (!isCookieAccepted) {
+		cookieBlock.removeClass('hidden');
+	}
+
+	cookieBtnAccept.on('click', function (e) {
+		e.preventDefault();
+		cookieBlock.hide();
+
+		sessionStorage.setItem('cookieAccepted', true);
+	});
+}
 
 
 

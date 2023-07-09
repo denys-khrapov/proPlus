@@ -28,6 +28,9 @@
 		min-height: 140px;
 		display: flex;
 		align-items: center;
+		svg {
+			filter: grayscale(100%);
+		}
 	}
 }
 
