@@ -3,6 +3,10 @@
 	&__container {
 		display: flex;
 		flex-wrap: wrap;
+		&.container {
+			max-width: 100%;
+			padding: 0;
+		}
 	}
 	&-card {
 		position: relative;
@@ -94,12 +98,6 @@
 @media (max-width: $md1) {
 	/*! -- Advantages styles----------------------------- */
 	.advantages {
-		&__container {
-			&.container {
-				max-width: 100%;
-				padding: 0;
-			}
-		}
 		&-card {
 			min-width: 320px;
 			min-height: 200px;

@@ -1,7 +1,6 @@
 /*! -- Timeline styles----------------------------- */
 .timeline {
 	background-color: $dark-50;
-	// background-color: $white-source;
 	&__container {
 		display: flex;
 		flex-direction: row;
@@ -137,7 +136,6 @@
 			&-holder {
 				width: auto;
 				height: auto;
-
 				position: relative;
 				&::after {
 					content: "";
