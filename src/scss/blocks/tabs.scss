@@ -73,8 +73,6 @@
 .tab button {
 	background-color: inherit;
 	float: left;
-	border: none;
-	outline: none;
 	cursor: pointer;
 	padding: 8px 8px 8px 16px;
 	transition: 0.3s;
@@ -90,6 +88,8 @@
 	column-gap: 12px;
 	background-color: $dark-100;
 	color: $dark-400;
+	border: none;
+	outline: none;
 	span {
 		display: flex;
 		justify-content: center;
@@ -104,16 +104,24 @@
 .tab button:hover {
 	background-color: $orange-300;
 	color: $white-source;
+	outline: none;
+	border: none;
 	svg {
 		path {
 			fill: $orange-source;
 		}
 	}
 }
+.tab button:focus {
+	outline: none;
+	border: none;
+}
 
 .tab button.active {
 	background-color: $orange-source;
 	color: $white-source;
+	outline: none;
+	border: none;
 	svg {
 		path {
 			fill: $orange-source;
@@ -123,7 +131,6 @@
 
 .tabcontent {
 	display: none;
-	border-top: none;
 }
 
 .tabcontent {
@@ -194,6 +201,8 @@
 			padding: 8px;
 			border-radius: 8px;
 			white-space: nowrap;
+			border: none;
+			outline: none;
 			span {
 				width: 24px;
 				height: 24px;

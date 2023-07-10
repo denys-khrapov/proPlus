@@ -112,7 +112,7 @@
 			display: flex;
 			flex-direction: row;
 			align-items: center;
-			gap: 16px;
+			column-gap: 16px;
 			flex-wrap: wrap;
 		}
 
@@ -261,7 +261,6 @@
 					font-weight: 400;
 					font-size: 23px;
 					line-height: 32px;
-					// color: $white-50;
 				}
 			}
 			&__address {
@@ -273,12 +272,10 @@
 					font-size: 13px;
 					font-weight: 300;
 					line-height: 18px;
-					// color: $white-200;
 					text-align: center;
 				}
 				a {
 					font-weight: 400;
-					// color: $teal-source;
 					padding-left: 0;
 					padding-right: 0;
 				}

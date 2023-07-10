@@ -1373,6 +1373,20 @@ input.novalid {
   margin-top: 42px;
 }
 
+.no-webp .hero--success {
+  background-image: url("../img/hero-success-bg.jpg");
+}
+
+.hero--success .hero__svg-holder {
+  margin: 0px 0px 128px 0px;
+}
+
+.hero--success .hero__inner {
+  -webkit-box-pack: unset;
+  -ms-flex-pack: unset;
+  justify-content: unset;
+}
+
 .hero__image-holder {
   display: none;
 }
@@ -1765,8 +1779,6 @@ input.novalid {
 .tab button {
   background-color: inherit;
   float: left;
-  border: none;
-  outline: none;
   cursor: pointer;
   padding: 8px 8px 8px 16px;
   -webkit-transition: 0.3s;
@@ -1792,6 +1804,8 @@ input.novalid {
   column-gap: 12px;
   background-color: rgb(214, 214, 214);
   color: rgb(131, 131, 131);
+  border: none;
+  outline: none;
 }
 
 .tab button span {
@@ -1813,15 +1827,24 @@ input.novalid {
 .tab button:hover {
   background-color: rgb(250, 120, 74);
   color: #fff;
+  outline: none;
+  border: none;
 }
 
 .tab button:hover svg path {
   fill: rgb(229, 88, 40);
 }
 
+.tab button:focus {
+  outline: none;
+  border: none;
+}
+
 .tab button.active {
   background-color: rgb(229, 88, 40);
   color: #fff;
+  outline: none;
+  border: none;
 }
 
 .tab button.active svg path {
@@ -1830,7 +1853,6 @@ input.novalid {
 
 .tabcontent {
   display: none;
-  border-top: none;
 }
 
 .tabcontent {
@@ -2933,6 +2955,10 @@ input.novalid {
   background-image: url(../img/hero-bg.webp);
 }
 
+.webp .hero--success {
+  background-image: url(../img/hero-success-bg.webp);
+}
+
 .webp .benefits {
   background-image: url(../img/benefits-bg.webp);
 }
@@ -3170,16 +3196,29 @@ input.novalid {
 
   .dropdown {
     background-color: rgb(251, 251, 251);
-    padding: 16px 32px;
-    max-width: 256px;
+    padding: 16px 17.5px;
+    max-width: 204px;
   }
 
   .dropdown-main-link {
     pointer-events: none;
-    font-size: 16px;
+    font-size: 14px;
     color: rgb(57, 57, 57);
     font-weight: 700;
     line-height: 1.4;
+    letter-spacing: 0.28px;
+  }
+
+  .dropdown__social {
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .dropdown__social p {
+    text-align: center;
+    width: 100%;
+    line-height: 8px;
   }
 
   .dropdown__svg-holder {
@@ -3205,15 +3244,26 @@ input.novalid {
   }
 
   .dropdown .btn-full {
+    width: 100%;
     padding: 16px 13.5px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+
+  .dropdown .btn-full svg {
+    display: none;
   }
 
   .dropdown__phone-box p {
-    line-height: 8px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 100px;
+    line-height: 1.4;
   }
 
   .dropdown__content {
-    padding: 8px 32px 24px;
+    padding: 14.5px 8px 24px;
   }
 
   .dropdown.show {
@@ -3225,6 +3275,7 @@ input.novalid {
     display: block;
     -webkit-box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+    top: 52px;
   }
 
   .dropdown.show .dropdown__content::before {
@@ -3276,7 +3327,9 @@ input.novalid {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    gap: 16px;
+    -webkit-column-gap: 16px;
+    -moz-column-gap: 16px;
+    column-gap: 16px;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
@@ -3517,6 +3570,7 @@ input.novalid {
     background-color: rgb(251, 251, 251);
     min-height: 400px;
     background-image: unset !important;
+    margin: 0px 0px 0px 0px;
   }
 
   .hero__container {
@@ -3633,13 +3687,9 @@ input.novalid {
 
   .hero .hero-logo__svg-holder {
     height: 20px;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
   }
 
   .hero .hero-logo__svg-holder svg {
-    width: 100%;
     height: 100%;
     -o-object-fit: cover;
     object-fit: cover;
@@ -3762,6 +3812,8 @@ input.novalid {
     padding: 8px;
     border-radius: 8px;
     white-space: nowrap;
+    border: none;
+    outline: none;
   }
 
   .tab button span {

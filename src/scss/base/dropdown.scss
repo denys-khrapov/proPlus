@@ -101,14 +101,24 @@
 	/*! -- Dropdown styles----------------------------- */
 	.dropdown {
 		background-color: $dark-50;
-		padding: 16px 32px;
-		max-width: 256px;
+		padding: 16px 17.5px;
+		max-width: 204px;
 		&-main-link {
 			pointer-events: none;
-			font-size: 16px;
+			font-size: 14px;
 			color: $dark-700;
 			font-weight: 700;
 			line-height: 1.4;
+			letter-spacing: 0.28px;
+		}
+		&__social {
+			flex-wrap: wrap;
+			row-gap: 8px;
+			p {
+				text-align: center;
+				width: 100%;
+				line-height: 8px;
+			}
 		}
 		&__svg-holder {
 			display: flex;
@@ -120,21 +130,30 @@
 			column-gap: 8px;
 		}
 		.btn-full {
+			width: 100%;
 			padding: 16px 13.5px;
+			justify-content: center;
+			svg {
+				display: none;
+			}
 		}
 		&__phone-box {
 			p {
-				line-height: 8px;
+				text-align: center;
+				margin: 0 auto;
+				max-width: 100px;
+				line-height: 1.4;
 			}
 		}
 		&__content {
-			padding: 8px 32px 24px;
+			padding: 14.5px 8px 24px;
 		}
 		&.show {
 			box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
 			.dropdown__content {
 				display: block;
 				box-shadow: 0px 0px 16px 0px rgba(0, 0, 0, 0.15);
+				top: 52px;
 				&::before {
 					content: "";
 					position: absolute;
