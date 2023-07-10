@@ -38,6 +38,11 @@ body {
 	&.lock {
 		overflow: hidden;
 	}
+	&.hide-scrollbar {
+		.header {
+			padding-right: 17px;
+		}
+	}
 	font-size: $fontSize;
 	font-weight: 400;
 	line-height: 1.4;
@@ -88,7 +93,7 @@ body {
 
 .content {
 	flex: 1 1 auto;
-	background-color: #fff;
+	background-color: $dark-50;
 	position: relative;
 	z-index: 1;
 }
@@ -101,15 +106,25 @@ body {
 	.subtitle {
 		font-size: 18px;
 	}
+
+	body {
+		&.hide-scrollbar {
+			.header {
+				padding-right: 0px;
+			}
+		}
+	}
 }
 
 @import "base/badge";
+@import "base/select";
 @import "base/attention-modal";
 @import "base/links";
 @import "base/swiper";
 @import "base/buttons";
 @import "base/inputs";
 @import "base/forms";
+@import "base/modal";
 @import "base/accordion";
 @import "base/scrollbar";
 @import "base/dropdown";
